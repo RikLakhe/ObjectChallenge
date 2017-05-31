@@ -7,6 +7,20 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
+<table>
+		<tr>
+			<th>Name</th><th>Track</th><th>Achivement</th><th>Point</th>
+		</tr>
+	</thead>
+	<tbody id="dat">
+		
+	</tbody>
+</table>
+	
+
+
+
+
 	<script type="text/javascript">
 		var student=[];
 		function add(){
@@ -28,9 +42,12 @@
 				add();
 			}
 			else if(choice == 2){
+				var line= '';
 				for(var i = 0; i<student.length;i++){
-					console.log(student[i]);
+					line += '<tr><td>'+student[i].name+'</td><td>'+student[i].track+'</td><td>'+student[i].achivement+'</td><td>'+student[i].point+'</td></tr>';
 				}
+				document.getElementById("dat").innerHTML = line;
+				break;
 			}else if(choice ==3){
 				break;
 			}else{
